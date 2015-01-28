@@ -1,0 +1,99 @@
+>>> ================================ RESTART ================================
+>>> 
+##Define a function:
+def function_name(parameter_1,parameter_2):
+     {this is the code in the function}
+     {more code}
+     {more code}
+     return {value to return to the main program}
+{this code isn't in the function}
+{because it isn't indented}
+remember to put a colon ':' at the end
+of the line that starts with 'def'
+
+def Area(a,b):
+  area=a*b
+  return area
+
+Area(4,6)= 24
+
+##Tuple:()
+define a tuple:
+months = ('January','February','March','April','May','June','July','August','September','October','November','December')
+
+>>>months
+('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December')
+
+##List: []
+cats = ['Tom', 'Snappy', 'Kitty', 'Jessie', 'Chester']
+
+#directt index at #-1
+>>>cats[2]
+Kitty
+
+#range index i starts with 0.
+>>>cats[0:2]
+['Tom', 'Snappy']
+
+cats.append('Catherine')
+>>>cats
+['Tom', 'Snappy', 'Kitty', 'Jessie', 'Chester', 'Catherine']
+
+del cats[0]
+>>>cats
+['Snappy', 'Kitty', 'Jessie', 'Chester', 'Catherine']
+
+##Dictionary: {}
+#Make the phone book:
+phonebook = {'Andrew Parson':8806336, 'Emily Everett':6784346, 'Peter Power':7658344, 'Lewis Lame':1122345}
+
+#Add the person 'Gingerbread Man' to the phonebook:
+phonebook['Gingerbread Man']=1234567
+>>>phonebook
+{'Emily Everett': 6784346, 'Andrew Parson': 8806336, 'Lewis Lame': 1122345, 'Peter Power': 7658344, 'Gingerbread Man': 1234567}
+
+#delect 'Andrew Parson':
+del phonebook['Andrew Parson']
+>>>phonebook
+{'Emily Everett': 6784346, 'Lewis Lame': 1122345, 'Peter Power': 7658344, 'Gingerbread Man': 1234567}
+
+
+ages = {}
+ages['Sue'] = 23
+ages['Peter'] = 19
+ages['Andrew'] = 78
+ages['Karren'] = 45
+
+>>> ages.has_key('Sue')
+True
+
+Sue is in the dictionary. She is 23 years old
+
+The following people are in the dictionary:
+>>>ages.keys()
+['Sue', 'Peter', 'Andrew', 'Karren']
+
+keys = ages.keys()
+>>>keys
+['Sue', 'Peter', 'Andrew', 'Karren']
+
+People are aged the following:
+>>>ages.values()
+[23, 19, 78, 45]
+
+values = ages.values()
+>>>keys
+['Sue', 'Peter', 'Andrew', 'Karren']
+keys.sort()
+>>>keys
+['Andrew', 'Karren', 'Peter', 'Sue']
+
+>>>values
+[23, 19, 78, 45]
+value.sort()
+>>>values
+[19, 23, 45, 78]
+>>>len(ages)
+4
+The dictionary has 4 entries in it.
+>>> 
