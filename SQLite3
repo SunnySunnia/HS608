@@ -1,4 +1,4 @@
->sqlite3 mydb.db  
+```>sqlite3 mydb.db```  
 >.quit  
 
 * Foreign keys:  
@@ -6,7 +6,7 @@
 
 create table clients(
   client_id integer not null primary key AUTOINCREMENT,
-  lastname varchar(64)  not null,                             #not null meanning mentatory for input
+  lastname varchar(64)  not null,                             --not null meanning mentatory for input
   firstname varchar(64) not null,
   address varchar(64),
   city_state_zip varchar(64)
