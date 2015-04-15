@@ -4,6 +4,49 @@
 * Foreign keys:  
   PRAGMA foreign_keys=ON  
 
+create table clients(
+  client_id integer not null primary key AUTOINCREMENT,
+  lastname varchar(64)  not null,                             #not null meanning mentatory for input
+  firstname varchar(64) not null,
+  address varchar(64),
+  city_state_zip varchar(64)
+);  
+
+create table doctors(
+  doctor_id integer not null primary key AUTOINCREMENT,
+  lastname varchar(64)  not null,
+  firstname varchar(64) not null,
+  specialty varchar(64)
+);  
+
+alter table doctors add   address varchar(64)  not null default '' ;  
+alter table doctors add   city_state_zip varchar(64)  not null default '';  
+
+create table appointments(
+  appoint_id integer not null primary key AUTOINCREMENT,
+  appt_date datetime not null,
+  fk_client_id int not null,                 -- foreign key constraint
+  fk_doctor_id int,                            -- foreign key constraint
+  service varchar(64) not null,
+  seen boolean,
+  FOREIGN KEY (fk_client_id) REFERENCES clients (client_id), -- foreign key constraint
+  FOREIGN KEY (fk_doctor_id) REFERENCES doctors (doctor_id) -- foreign key constraint
+);   
+
+create table bill_items(
+  item_id integer not null primary key AUTOINCREMENT,    -- charge or payment
+  fk_client_id int,                                -- foreign key constraint
+  fk_doctor_id int,                              -- foreign key constraint
+  fk_appoint_id int,                             -- foreign key constraint
+  date     datetime  not null,
+  amount  decimal(8,2) not null,
+  FOREIGN KEY (fk_client_id) REFERENCES clients (client_id), -- foreign key constraint
+  FOREIGN KEY (fk_doctor_id) REFERENCES doctors (doctor_id), -- foreign key constraint
+  FOREIGN KEY (fk_appoint_id) REFERENCES appointments (appoint_id) -- constraint
+);  
+
+
 >.schema  
   to see what tables you have created.  
 
+>drop table XXX;
