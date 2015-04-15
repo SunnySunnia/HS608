@@ -1,0 +1,9 @@
+>sqlite3 mydb.db  
+>.quit  
+
+* Foreign keys:  
+  PRAGMA foreign_keys=ON  
+
+>.schema  
+  to see what tables you have created.  
+
