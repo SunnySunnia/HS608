@@ -1,4 +1,4 @@
-```>sqlite3 mydb.db```  
+>sqlite3 mydb.db  
 >.quit  
 
 * Foreign keys:  
