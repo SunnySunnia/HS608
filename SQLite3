@@ -4,7 +4,7 @@
 * Foreign keys:  
   PRAGMA foreign_keys=ON  
 
-> **create table** clients(
+ **create table** clients(
   client_id integer not null primary key AUTOINCREMENT,
   lastname varchar(64)  not null,                             --not null meanning mentatory for input
   firstname varchar(64) not null,
