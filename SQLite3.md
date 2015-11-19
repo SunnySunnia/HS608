@@ -157,3 +157,10 @@ __.import__ genes.csv genes
 __.import__ knownPromoters.csv promoters  
 __.import__ knownTerms.csv terminators  
 __.import__ tu.csv transcript_units  
+
+
+__SELECT__ avg(c) __FROM__ (__SELECT__ suject
+
+SELECT	avg(c)	FROM	(SELECT	subject_id,	sum(length_of_stay)	AS	c	FROM
+
+admissions	GROUP	BY	subject_id)
