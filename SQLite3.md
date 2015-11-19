@@ -88,14 +88,72 @@ sqlite> __select__ * __from__ clients __where__ firstname like 'J%' __order by__
 
 sqlite3>drop table XXX;  
 
-sqlite> __DELETE FROM__ table __WHERE__ condition
+sqlite> __DELETE FROM__ table __WHERE__ condition  
 
 Lecture 2  
 -------  
 $squlite3 XXX.db  
 **select count(*) from** XXX;  
 
+__SELECT__ * __FROM__ department __WHERE__ name = 'cardiac'  
+__SELECT__ (name, location) __FROM__ departments  
+__SELECT__ * __FROM__ departments __WHERE__ id = 1  
 
 
+* Example:  
+__PRAGMA__ foreign_keys=ON;  
+
+__create table__ pos_strand(  
+  seq MEDIUMTEXT  
+);  
+
+__create table__ neg_strand(  
+  seq MEDIUMTEXT  
+);  
+
+__create table__ genes(  
+  name varchar(64) NOT NULL PRIMARY KEY,  
+  pos_left integer,  
+  pos_right integer,  
+  strand char(1),  
+  length integer,  
+  seq text(8196),  
+  type varchar(16),  
+  subtype varchar(16),  
+  reference text(512)  
+);  
+
+__create table__ promoters(  
+  name varchar(64) NOT NULL PRIMARY KEY,  
+  pos_plus1 integer,  
+  strand varchar(1),  
+  seq text(256),  
+  sigma_factor varchar(64),  
+  for_gene_type varchar(16)  
+);  
+
+__create table__ terminators(  
+  terminator_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,  
+  pos_left INTEGER,  
+  pos_right INTEGER,  
+  length INTEGER,  
+  strand CHAR(1),  
+  seq TEXT(256)  
+);  
+
+__create table__ transcript_units(  
+  tu_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,  
+  name VARCHAR(64) NOT NULL,  
+  prom_name VARCHAR(64),  
+  fk_gene_name VARCHAR(64),  
+  FOREIGN KEY(fk_gene_name)REFERENCES genes(name)  
+);  
 
 
+__.import__ ecoliM54_1string.txt pos_strand  
+__.import__ ecoliM54RevComp_1string.txt neg_strand  
+__.separator__ ","  
+__.import__ genes.csv genes  
+__.import__ knownPromoters.csv promoters  
+__.import__ knownTerms.csv terminators  
+__.import__ tu.csv transcript_units  
