@@ -88,6 +88,7 @@ sqlite> __select__ * __from__ clients __where__ firstname like 'J%' __order by__
 
 sqlite3>drop table XXX;  
 
+sqlite> __DELETE FROM__ table __WHERE__ condition
 
 Lecture 2  
 -------  
