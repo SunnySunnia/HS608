@@ -51,8 +51,20 @@ Git Push
 cp "test form.ipynb" ~/Repo  
 cd Repo  
 git add "test form.ipynb"  
+git add .   #adds everything that's new  
 git commit -m "test 1"  
-git push  #will ask for github name and password.
+git push  #will ask for github name and password.  
+git pull  #update local repo from github  
+
+git checkout -b XXX(branch)  
+git push -u origin XXX  
+
+git branch -d XXX  
+git push origin --delete XXX  #delete a branch  
+
+git branch (-r)  #-r gives full list of branches, even the ones not created by you  
+git checkout XXX  #switch branch  
+
 ```
 
 
