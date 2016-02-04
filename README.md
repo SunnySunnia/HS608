@@ -1,1 +1,2 @@
-# HS608
+# Working/Setup notes to various programs.  
+
