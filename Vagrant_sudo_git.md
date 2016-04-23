@@ -65,6 +65,13 @@ git push origin --delete XXX  #delete a branch
 git branch (-r)  #-r gives full list of branches, even the ones not created by you  
 git checkout XXX  #switch branch  
 
+git stash  
+git checkout master  
+git pull  
+git log  
+git checkout dev  
+git merge master  
+
 ```
 
 
